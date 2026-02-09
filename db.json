@@ -1,1 +1,26 @@
-{ "requestId": "ADF-20260210-0001", "status": "SUCCESS", "processedCount": 1, "records": [ { "DEVICE_ID": "ASDFXXYYZZ", "USER_CODE": "checker", "DOMAIN_ID": "CORP", "CHANNEL_USER_ID": "ABCYYZZXX1", "APP_VERSION": "1.2.3", "DEVICE_OS": "Android", "DEVICE_IP": "10.1.2.3", "REGISTERED_DATE": "2024-10-11T10:12:45.123" },{ "DEVICE_ID": "ASDFXXYYZZ", "USER_CODE": "checker", "DOMAIN_ID": "CORP", "CHANNEL_USER_ID": "ABCYYZZXX2", "APP_VERSION": "1.2.3", "DEVICE_OS": "Android", "DEVICE_IP": "10.1.2.3", "REGISTERED_DATE": "2024-10-11T10:12:45.123" },{ "DEVICE_ID": "ASDFXXYYZZ", "USER_CODE": "checker", "DOMAIN_ID": "CORP", "CHANNEL_USER_ID": "ABCYYZZXX3", "APP_VERSION": "1.2.3", "DEVICE_OS": "Android", "DEVICE_IP": "10.1.2.3", "REGISTERED_DATE": "2024-10-11T10:12:45.123" },{ "DEVICE_ID": "ASDFXXYYZZ", "USER_CODE": "checker", "DOMAIN_ID": "CORP", "CHANNEL_USER_ID": "ABCYYZZXX4", "APP_VERSION": "1.2.3", "DEVICE_OS": "Android", "DEVICE_IP": "10.1.2.3", "REGISTERED_DATE": "2024-10-11T10:12:45.123" },{ "DEVICE_ID": "ASDFXXYYZZ", "USER_CODE": "checker", "DOMAIN_ID": "CORP", "CHANNEL_USER_ID": "ABCYYZZXX5", "APP_VERSION": "1.2.3", "DEVICE_OS": "Android", "DEVICE_IP": "10.1.2.3", "REGISTERED_DATE": "2024-10-11T10:12:45.123" }    ] }
+{
+  "records": [
+    {
+      "id": 1,
+      "DEVICE_ID": "ASDFXXYYZZ",
+      "USER_CODE": "checker",
+      "DOMAIN_ID": "CORP",
+      "CHANNEL_USER_ID": "ABCYYZZXX1",
+      "APP_VERSION": "1.2.3",
+      "DEVICE_OS": "Android",
+      "DEVICE_IP": "10.1.2.3",
+      "REGISTERED_DATE": "2024-10-11T10:12:45.123"
+    },
+    {
+      "id": 2,
+      "DEVICE_ID": "ASDFXXYYZZ",
+      "USER_CODE": "checker",
+      "DOMAIN_ID": "CORP",
+      "CHANNEL_USER_ID": "ABCYYZZXX2",
+      "APP_VERSION": "1.2.3",
+      "DEVICE_OS": "Android",
+      "DEVICE_IP": "10.1.2.3",
+      "REGISTERED_DATE": "2024-10-11T10:12:45.123"
+    }
+  ]
+}
