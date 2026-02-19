@@ -23,5 +23,5 @@
       "REGISTERED_DATE": "2024-10-11T10:12:45.123"
     }
   ],
-  "status": "SUCCESS"
+  "status": { "value": "SUCCESS" }
 }
