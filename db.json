@@ -23,5 +23,18 @@
       "REGISTERED_DATE": "2024-10-11T10:12:45.123"
     }
   ],
-  "status": { "value": "SUCCESS" }
+  "init": {
+    "status": {
+      "code": "0000",
+      "message": "Request success"
+    },
+    "data": {
+      "accessToken": "eyJraWQiOiJmMTFjMGVkZC02NGFmLTRkYmYtOTc3NS05MjZhNzJkOTU4NzciLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjb25zdW1lci1jbGllbnQiLCJhdWQiOiJjb25zdW1lci1jbGllbnQiLCJuYmYiOjE3MTQwNDU2NTUsInNjb3BlIjpbIm1lc3NhZ2UucmVhZCJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDEiLCJleHAiOjE3MTQwNDU5NTUsImlhdCI6MTcxNDA0NTY1NSwianRpIjoiMGI4YTRkODYtMGU1My00ZmE1LTkzNmQtOWMwM2Y3NmUxZjRmIn0.f0l2RKM4l7bC4L7BPsPYdxt1bINl_SVxGDwkXcznsNGqS4_RfAP2yjLgWm8UbEt8IfBBU0Qilu38o-q61KI2j_PLQuOmUXrZfp2CSlV3q9DDbQWhyb3ttgOswDxvzP_OVDVmOFqU_z0ARzrkGT60SNprKSuq3IfwYvdgBYP-8e07KdRc1MeyjsSYxderCi4HR1gNvC6yxD7_rgJ4opFXlZL1ryzU3E0ePUFv8uPqdNVz08zjPCxcV18AbhD04fx8NBl5feSxT2bwcxIc8kT4yVl4-6GjK51HQ8Yb95CWK1PxF3fP_ArrX6POkU4hqGOZ4I_MjffJFt4Mhze5Ao8TvQ",
+      "refreshToken": null,
+      "scope": "message.read",
+      "tokenType": "Bearer",
+      "expiresIn": 299,
+      "journeyId": "GCA_ETB-41497dfb-87bd-4da2-9ac8-d79e29f065aa"
+    }
+  }
 }
