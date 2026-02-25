@@ -36,5 +36,27 @@
       "expiresIn": 299,
       "journeyId": "GCA_ETB-41497dfb-87bd-4da2-9ac8-d79e29f065aa"
     }
+  },
+  "validate": {
+    "status": {
+        "code": "0000",
+        "message": "Request succeeded"
+    },
+    "data": {
+        "incorrectAttempts": 0
+    }
+  },
+  "resendOtp": {
+    "status": {
+        "code": "0000",
+        "message": "Request succeeded"
+    },
+    "data": {
+        "existingCustomer": "Y",
+        "txnRef": "KHCwWFQEy3BJfMUJyXpXiAeK2KNapiVQEhi1tHeh+6BVSmT2hqNxsRfq9m7I1Nk08HWyj3bXE8kiLnM9dAn1cYfYpRKN0MYYdi/dPd3AFHN5COxHeO2yJvzPlPar1j3tANhNpkFpywl3nv8RSTFChSsfh1HtNYLzHqJl3IuNUr0=",
+        "journeyId": "GC-WEB-66a22b08c496236e90cfaf89aa5f9c4a",
+        "retryOtpAttemptsConsumed": 1,
+        "retryOtpAttemptsLeft": 1
+    }
   }
 }
