@@ -112,7 +112,7 @@
      },
      {
         "key":"GCA_ETB_CONSENT_003",
-        "title":"Optional: I hereby consent to processing of my Data for sending me personalized offers on other products and services of HDFC Bank, its affiliates and partners through Call, SMS, WhatsApp, Email or other channels in the manner described in the notice here",
+        "title":"Optional: I hereby consent to processing of my Data for sending me personalized offers on other products and services of HDFC Bank.",
         "mandatory":"false",
         "type":"LOGIN",
         "headingText":"",
