@@ -39,213 +39,57 @@
   },
   "validate": {
     "status": {
-        "code": "0000",
-        "message": "Request succeeded"
+      "code": "0000",
+      "message": "Request succeeded"
     },
     "data": {
-        "incorrectAttempts": 0
+      "incorrectAttempts": 0
     }
   },
   "resendOtp": {
     "status": {
-        "code": "0000",
-        "message": "Request succeeded"
+      "code": "0000",
+      "message": "Request succeeded"
     },
     "data": {
-        "existingCustomer": "Y",
-        "txnRef": "KHCwWFQEy3BJfMUJyXpXiAeK2KNapiVQEhi1tHeh+6BVSmT2hqNxsRfq9m7I1Nk08HWyj3bXE8kiLnM9dAn1cYfYpRKN0MYYdi/dPd3AFHN5COxHeO2yJvzPlPar1j3tANhNpkFpywl3nv8RSTFChSsfh1HtNYLzHqJl3IuNUr0=",
-        "journeyId": "GC-WEB-66a22b08c496236e90cfaf89aa5f9c4a",
-        "retryOtpAttemptsConsumed": 1,
-        "retryOtpAttemptsLeft": 1
+      "existingCustomer": "Y",
+      "txnRef": "KHCwWFQEy3BJfMUJyXpXiAeK2KNapiVQEhi1tHeh+6BVSmT2hqNxsRfq9m7I1Nk08HWyj3bXE8kiLnM9dAn1cYfYpRKN0MYYdi/dPd3AFHN5COxHeO2yJvzPlPar1j3tANhNpkFpywl3nv8RSTFChSsfh1HtNYLzHqJl3IuNUr0=",
+      "journeyId": "GC-WEB-66a22b08c496236e90cfaf89aa5f9c4a",
+      "retryOtpAttemptsConsumed": 1,
+      "retryOtpAttemptsLeft": 1
     }
   },
   "settings": {
-  "maintenanceWindow":"disabled",
-  "networkSecurity":true,
-  "session":{
-     "notify":1,
-     "expiry":5
-  },
-  "landing":{
-     "title":"A Few Things Before you Start",
-     "list":[
+    "maintenanceWindow": "disabled",
+    "networkSecurity": true,
+    "session": {
+      "notify": 1,
+      "expiry": 5
+    },
+    "landing": {
+      "title": "A Few Things Before you Start",
+      "list": [
         {
-           "icon":"user",
-           "text":"Available only for existing customers with registered email and mobile number."
-        },
-        {
-           "icon":"card",
-           "text":"Keep your Debit Card / NetBanking details handy for identity verification."
+          "icon": "user",
+          "text": "Available only for existing customers with registered email and mobile number."
         },
         {
-           "icon":"pan",
-           "text":"Ensure your PAN is updated with the bank and your NRI account is active."
+          "icon": "card",
+          "text": "Keep your Debit Card / NetBanking details handy for identity verification."
         },
         {
-           "icon":"kyc",
-           "text":"Only customers who are Re-KYC and FATCA compliant can proceed."
+          "icon": "pan",
+          "text": "Ensure your PAN is updated with the bank and your NRI account is active."
         },
         {
-           "icon":"address",
-           "text":"Both your permanent and mailing address countries should not be India."
-        }
-     ]
-  },
-  "consents":[
-     {
-        "key":"GCA_ETB_CONSENT_001",
-        "title":"I agree to be being classified as a \"Retail Client\" as per IFSCA guidelines.",
-        "mandatory":"true",
-        "type":"LOGIN",
-        "headingText":"",
-        "hyperText":"",
-        "description":"<!DOCTYPE html><html lang=\"en\"><body><div>Test Data</div></body></html>"
-     },
-     {
-        "key":"GCA_ETB_CONSENT_002",
-        "title":"I hereby consent to collection and processing of my Data for availing this Account and relevant services in the manner described in the notice here",
-        "mandatory":"false",
-        "type":"LOGIN",
-        "headingText":"",
-        "hyperText":"here",
-        "description":"<!DOCTYPE html><html lang=\"en\"><body><div>Test Data</div></body></html>"
-     },
-     {
-        "key":"GCA_ETB_CONSENT_003",
-        "title":"Optional: I hereby consent to processing of my Data for sending me personalized offers on other products and services of HDFC Bank, its affiliates and partners through Call, SMS, WhatsApp, Email or other channels in the manner described in the notice here",
-        "mandatory":"false",
-        "type":"LOGIN",
-        "headingText":"",
-        "hyperText":"here",
-        "description":"<!DOCTYPE html><html lang=\"en\"><body><div>Test Data</div></body></html>"
-     }
-  ],
-  "captcha":{
-     "display":true,
-     "secretKey":"6Le34MwpAAAAAOumSCeGxsFVTOD7HkVOejCV3f4x",
-     "siteKey":"6LcDquAqAAAAABBxl9e1Hx8ihqm11BNXHnlA2YHh"
-  },
-  "loginPage":{
-     "otpDuration":30000,
-     "mobileNumberValidation":{
-        "firstCharGreaterThan":"6",
-        "maxLength":10
-     },
-     "dateOfBirthValidation":{
-        "minAge":18,
-        "maxAge":55,
-        "message":"This product is available for customers aged between 18 and 55 years."
-     }
-  },
-  "apiErrors":{
-     "identify":{
-        "8005":{
-           "title":"Unable to Proceed",
-           "message":"The entered mobile no. & date of birth combination is not in our records. Please enter again.",
-           "navigate":false
+          "icon": "kyc",
+          "text": "Only customers who are Re-KYC and FATCA compliant can proceed."
         },
-        "8006":{
-           "title":"Unable to Proceed",
-           "message":"Please connect with your relationship manager or visit the nearest branch.",
-           "navigate":true
-        },
-        "8008":{
-           "title":"Oops! Too Many Attempts!",
-           "message":"You've exceeded the number of attempts to enter correct OTP. Please try again after 3 hours.",
-           "navigate":true
-        },
-        "8009":{
-           "title":"Another device detected",
-           "message":"",
-           "navigate":false
-        },
-        "8010":{
-           "title":"OTP is under cool off, Please try after 30 seconds of attempt.",
-           "message":"",
-           "navigate":false
-        },
-        "8011":{
-           "title":"Unable to Proceed",
-           "message":"As your KYC is not complete.",
-           "navigate":true
-        },
-        "8013":{
-           "title":"Oops! Details Not Updated!",
-           "message":"Unable to proceed as your details are not updated in our records. Please contact your relationship manager or visit the nearest branch to update them.",
-           "navigate":true
+        {
+          "icon": "address",
+          "text": "Both your permanent and mailing address countries should not be India."
         }
-     },
-     "resend":{
-        "8008":{
-           "title":"Unable to Proceed",
-           "message":"You have reached maximum number of attempts, kindly retry after 1 hours.",
-           "navigate":true
-        }
-     },
-     "validate":{
-        "8003":{
-           "title":"Kindly enter correct OTP",
-           "message":"",
-           "navigate":false
-        },
-        "8004":{
-           "title":"OTP Expired! Please click on Resend OTP and try again.",
-           "message":"",
-           "navigate":false
-        },
-        "8008":{
-           "title":"Oops! Too Many Attempts!",
-           "message":"You have reached maximum number of attempts, kindly retry after 3 hours.",
-           "navigate":true
-        },
-        "9005":{
-           "title":"Unable to Proceed",
-           "message":"As your KYC is not complete.",
-           "navigate":false
-        }
-     },
-     "profile":{
-        "8000":{
-           "title":"Unable to Proceed",
-           "message":"Request failed",
-           "navigate":true
-        }
-     },
-     "accounts":{
-        "8011":{
-           "title":"Unable to Proceed",
-           "message":"As your KYC is not complete.",
-           "navigate":true
-        }
-     },
-     "update":{
-        "8001":{
-           "title":"Unable to Proceed",
-           "message":"You have reached maximum number of attempts, kindly retry after 1 hours.",
-           "navigate":true
-        }
-     },
-     "purchase":{
-        "8001":{
-           "title":"Unable to Proceed",
-           "message":"You have reached maximum number of attempts, kindly retry after 1 hours.",
-           "navigate":true
-        }
-     },
-     "pricingQuote":{
-        "8001":{
-           "title":"Unable to Proceed",
-           "message":"You have reached maximum number of attempts, kindly retry after 1 hours.",
-           "navigate":true
-        }
-     },
-     "process":{
-        "8014":{
-           "title":"Payment Successful!",
-           "message":"We’re fetching your policy details. For any queries, please contact your relationship manager or visit the nearest branch.",
-           "navigate":true
-        }
-     }
+      ]
+    }
   }
-}
 }
