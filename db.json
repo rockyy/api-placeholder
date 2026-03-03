@@ -120,5 +120,22 @@
         "description":"<!DOCTYPE html><html lang=\"en\"><body><div>test html content 3</div></body></html>"
      }
   ]
+  },
+  "getOtp":{
+    "status": {
+        "code": "0000",
+        "message": "Request succeeded"
+    },
+    "data": {
+        "existingCustomer": "Y",
+        "eligibleCustomer": "Y",
+        "eligibleAccounts" : 1,
+        "txnRef": "KHCwWFQEy3BJfMUJyXpXiJNGfPY8qUTXkQnUXShEWenkC1Pu/Ren3/aW8LEP8oT+K3BsNyihd4v3gq9zSAGb99WJKyMCvgebop/ISIubnugWBkOX09Jh9kMiZgef8ieKRanr7y2RmPJ/1GpoUmMv5k2X/brRaUnngC9dHjbZa8w=",
+        "journeyId": "GCA-WEB-66a21ca2de7d39c5e65d68e0b6a4b6fe",
+        "retryOtpAttemptsConsumed": 0,
+        "retryOtpAttemptsLeft": 2,
+        "verifyOtpAttemptsConsumed": 0,
+        "verifyOtpAttemptsLeft": 3
+    }
   }
 }
