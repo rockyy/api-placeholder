@@ -1,0 +1,88 @@
+1	Aadhaar Number	PII
+2	Aadhar VID	PII
+3	Aadhaar Enrolment ID	PII
+4	PAN Number	PII
+5	Fingerprints/Thumbscan	PII
+6	Iris/Retina Scan	PII
+7	Facial geometry/Facial Scan	PII
+8	Ayushman Bharat Health Account (ABHA) Number	PII
+9	Pension Account Number (PRAN)	PII
+10	NREGA Job Card	PII
+11	Ration Card Number	PII
+12	Driving Licence Number	PII
+13	Passport Number	PII
+14	Voter ID	PII
+15	CKYC number	PII
+16	Visa Document	PII
+17	Saving Account Number	PII
+18	Current Account Number	PII
+19	CIF	PII
+20	UPI RRN	PII
+21	UPI Number	PII
+22	UPI VPA ID	PII
+23	Deposit Account Number	PII
+24	UCIC	PII
+25	Wallet Account Number (e.g Prepaid Wallet Account Number/Digital Currency Wallet Number)	PII
+26	Account Balance	PII
+27	IMPS Mobile Money Identifier (MMID)	PII
+28	Mutual Fund Account Number	PII
+29	Loan Account Number	PII
+30	Insurance/Policy Number	PII
+31	Depository Account Number	PII
+32	FasTag Account Number	PII
+33	Credit history	PII
+34	Credit Scores	PII
+35	Transaction Statements	PII
+36	Authentication PIN/MPIN/UPI PIN/ Card PIN	PII
+37	Password	PII
+38	Security/validation Questions for account or password retrieval or identify validation	PII
+39	One Time Passwords (OTP)	PII
+40	Debit Card number	PII
+41	Credit Card number	PII
+42	Forex Card number	PII
+43	Prepaid Card number	PII
+44	Virtual Card number	PII
+45	Card Expiry Date	PII
+46	CVV	PII
+47	Name	PII
+48	Company Name	PII
+49	Employee ID	PII
+50	Date of Birth	PII
+51	Date of Death	PII
+52	Gender	PII
+53	Weight	PII
+54	Height	PII
+55	Marital status	PII
+56	Annual Income	PII
+57	Dependents	PII
+58	Photograph	PII
+59	Video Recording/VKYC Video	PII
+60	Politically Exposed Person	PII
+61	Mother Name	PII
+62	Father Name	PII
+63	Spouse Name	PII
+64	Beneficiary Information	PII
+65	Nominee Name	PII
+66	Nominee Date of Birth	PII
+67	Address	PII
+68	City	PII
+69	PIN Code	PII
+70	Caste	PII
+71	Religion	PII
+72	Geo-Location	PII
+73	userID	PII
+74	Social Media Handle	PII
+75	IP Address	PII
+76	IMEI	PII
+77	Terminal ID	PII
+78	Mobile device information (collected through mobile banking application such as Device ID, Mobile model, data collected through the application such as SMS, Gallery or any other with reference to the permission opted	PII
+79	Device ID	PII
+80	Mobile Number	PII
+81	Signature	PII
+82	Email ID	PII
+83	Medical Record Number	PII
+84	Sickness information	PII
+85	License Plate Numbers	PII
+86	Vehicle Identification Number/ Chassis Number	PII
+87	Vehicle Engine Number	PII
+88	Vehicle Insurance Policy Number	PII
