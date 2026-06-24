@@ -86,3 +86,49 @@
 86	Vehicle Identification Number/ Chassis Number	PII
 87	Vehicle Engine Number	PII
 88	Vehicle Insurance Policy Number	PII
+
+89	Service brochures	
+90	Advertisements	
+91	Job opening announcements	
+92	Press releases 	
+93	Declared / published financial results	
+94	Annual Report	
+95	Publications and marketing material	
+96	Information published on public facing websites	
+97	Operational reports of various departments	
+98	Concept notes	
+99	MIS reports	
+100	Purchase orders / invoices	
+101	Project documents	
+102	Standard operating procedures	
+103	Policy / process / procedure documents	
+104	Internal circulars / announcements	
+105	Internal correspondence	
+106	Bank's telephone directory	
+107	Training materials	
+108	Departmental budgets & staffing plans	
+109	Technology design documents, configurations, network diagrams 	
+110	System documentation	
+111	Service Level Agreements	
+112	Financial results before publishing	
+113	Financial statement	
+114	Business design principles	
+115	Product design documents	
+116	Software license key, source code	
+117	Marketing plans	
+118	Audit reports	
+119	Personal employee information	
+120	Bank Financial Ledger	
+121	NPA	
+122	Reports to management about Business	
+123	Branch, ATM, POS related counts 	
+124	3rd Party related financials / contract values / pay outs, etc.	
+125	System access, System non-financial data, 	
+126	new product-service plans or information, 	
+127	3rd party related information (not withstanding any confidentiality clause / sensitive information), 	
+128	Internal Process documentation, etc.	
+129	Employee Salary, CTC, bonus, appraisals, etc.	
+130	Cryptographic keys, Passwords, MPIN, ATM PIN, Authorization codes	
+131	Trade secrets	
+132	Acquisition/merger information	
+133	Intellectual property of the Bank	
