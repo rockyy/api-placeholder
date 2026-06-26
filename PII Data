@@ -132,3 +132,117 @@
 131	Trade secrets	
 132	Acquisition/merger information	
 133	Intellectual property of the Bank	
+
+
+```mermaid
+flowchart LR
+  A["App startup"] --> B["Init API plaintext"]
+  B --> C["Store accessToken, journeyId, txnRef, publicKey"]
+  C --> D["App calls backend service"]
+  D --> E["AxiosHttpClient"]
+  E --> F{"Encryption flag on and not init?"}
+  F -- "No" --> G["Send normal JSON"]
+  F -- "Yes" --> H["Encrypt body with AES-GCM"]
+  H --> I["Encrypt AES key with RSA publicKey"]
+  I --> J["Send { content } with enc headers"]
+  J --> K["Backend encrypted response"]
+  K --> L["Decrypt response content"]
+  L --> M["Pass normal JSON to existing app flow"]
+
+```
+
+
+Secure backend API request and response payloads using hybrid encryption. The Init API remains plain JSON and provides the encryption configuration required for subsequent API calls.
+
+Encryption Trigger
+
+Init API response contains networkSecurity.
+If networkSecurity=true, all subsequent backend API calls must use encrypted request/response format.
+If networkSecurity=false or missing, all subsequent API calls must use plain JSON.
+If networkSecurity is missing in Init API response, default it to false.
+If networkSecurity is present but not boolean, fail Init API response validation.
+No local env flag should control encryption.
+Init API Behavior
+
+Init API request is always plain JSON.
+Init API response must store/update:
+accessToken
+journeyId
+publicKey
+networkSecurity
+Latest successful Init API response should replace the active values.
+Init API should send plain JSON headers:
+Content-Type: application/json
+Accept: application/json
+Encrypted Request Behavior
+
+When networkSecurity=true:
+
+Generate a fresh random AES key per request.
+Encrypt request payload using AES-GCM-256.
+Encrypt the AES key using backend-provided RSA public key.
+Send request body as:
+{
+  "content": "base64(RSAEncryptedAESKey).base64(IV).base64(AESEncryptedPayload)"
+}
+Request headers must be:
+Content-Type: application/v1.enc.hdfc+json
+Accept: application/v1.enc.hdfc+json
+Empty or no-body requests should be encrypted as {}.
+Existing headers like Authorization, x-journey-id, and x-journey-name must continue to be sent.
+Encrypted Response Behavior
+
+When an encrypted request is sent:
+
+Store the generated AES key in request metadata.
+Use the same AES key to decrypt the matching response.
+Expected encrypted response format:
+{
+  "content": "base64(IV).base64(AESEncryptedPayload)"
+}
+Decrypted response should be passed to the existing app/service processing flow.
+Cipher and Key Details
+
+Payload encryption: AES-GCM-256
+AES key generation: random per request
+AES IV: random 12-byte IV per encryption operation
+AES-GCM authentication tag: 128-bit
+AES key wrapping: RSA-OAEP with SHA-256
+RSA public key source: Init API publicKey
+RSA private key remains only with backend
+Plain JSON Behavior
+
+When networkSecurity=false or missing:
+
+Requests should be sent without encryption.
+Request body should remain normal JSON.
+Headers must be:
+Content-Type: application/json
+Accept: application/json
+Error Handling
+
+If networkSecurity=true but publicKey is missing, stop the request and show common technical issue bottom sheet.
+Bottom sheet copy:
+Title: Opps! Something doesn't seem right.
+Message: Looks like we're facing some technical issue at the moment.
+If encryption fails, show technical issue bottom sheet.
+For encrypted success responses, if decryption fails, show technical issue bottom sheet.
+For encrypted non-2xx responses:
+Try to decrypt { content } first.
+If decryption fails, treat response as plaintext fallback because backend/proxy may accidentally return plaintext error.
+Special Cases
+
+Init API is always plain JSON.
+Google reCAPTCHA token generation from Google is not encrypted.
+Backend API call for reCAPTCHA verification follows the same networkSecurity rule.
+IDCOM callback recovery should also store latest Init API networkSecurity and publicKey.
+Acceptance Criteria
+
+Init API stores networkSecurity with default false if missing.
+Wrong networkSecurity type fails validation.
+Settings API no longer contains or validates networkSecurity.
+Encrypted requests use application/v1.enc.hdfc+json.
+Plain requests use application/json.
+AES key is generated per request and reused only for matching response decryption.
+Non-2xx encrypted responses are decrypted before error handling, with plaintext fallback.
+Existing app processing continues to receive decrypted/plain JSON transparently.
