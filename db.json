@@ -1,117 +1,190 @@
 {
-  "init": {
-    "status": {
-      "code": "0000",
-      "message": "Request success"
-    },
-    "data": {
-      "accessToken": "eyJraWQiOiJmMTFjMGVkZC02NGFmLTRkYmYtOTc3NS05MjZhNzJkOTU4NzciLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjb25zdW1lci1jbGllbnQiLCJhdWQiOiJjb25zdW1lci1jbGllbnQiLCJuYmYiOjE3MTQwNDU2NTUsInNjb3BlIjpbIm1lc3NhZ2UucmVhZCJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjkwMDEiLCJleHAiOjE3MTQwNDU5NTUsImlhdCI6MTcxNDA0NTY1NSwianRpIjoiMGI4YTRkODYtMGU1My00ZmE1LTkzNmQtOWMwM2Y3NmUxZjRmIn0.f0l2RKM4l7bC4L7BPsPYdxt1bINl_SVxGDwkXcznsNGqS4_RfAP2yjLgWm8UbEt8IfBBU0Qilu38o-q61KI2j_PLQuOmUXrZfp2CSlV3q9DDbQWhyb3ttgOswDxvzP_OVDVmOFqU_z0ARzrkGT60SNprKSuq3IfwYvdgBYP-8e07KdRc1MeyjsSYxderCi4HR1gNvC6yxD7_rgJ4opFXlZL1ryzU3E0ePUFv8uPqdNVz08zjPCxcV18AbhD04fx8NBl5feSxT2bwcxIc8kT4yVl4-6GjK51HQ8Yb95CWK1PxF3fP_ArrX6POkU4hqGOZ4I_MjffJFt4Mhze5Ao8TvQ",
-      "refreshToken": null,
-      "scope": "message.read",
-      "tokenType": "Bearer",
-      "expiresIn": 299,
-      "journeyId": "GCA_ETB-41497dfb-87bd-4da2-9ac8-d79e29f065aa"
-    }
-  },
-  "validate": {
-    "status": {
-      "code": "0000",
-      "message": "Request succeeded"
-    },
-    "data": {
-      "incorrectAttempts": 0
-    }
-  },
-  "resendOtp": {
-    "status": {
-      "code": "0000",
-      "message": "Request succeeded"
-    },
-    "data": {
-      "existingCustomer": "Y",
-      "txnRef": "KHCwWFQEy3BJfMUJyXpXiAeK2KNapiVQEhi1tHeh+6BVSmT2hqNxsRfq9m7I1Nk08HWyj3bXE8kiLnM9dAn1cYfYpRKN0MYYdi/dPd3AFHN5COxHeO2yJvzPlPar1j3tANhNpkFpywl3nv8RSTFChSsfh1HtNYLzHqJl3IuNUr0=",
-      "journeyId": "GC-WEB-66a22b08c496236e90cfaf89aa5f9c4a",
-      "retryOtpAttemptsConsumed": 1,
-      "retryOtpAttemptsLeft": 1
-    }
-  },
-  "settings": {
-    "maintenanceWindow": "disabled",
-    "networkSecurity": true,
-    "session": {
-      "notify": 1,
-      "expiry": 5
-    },
-    "landing": {
-      "title": "A Few Things Before you Start",
-      "list": [
+  "dynamic-form": {
+    "page": "contact-us",
+    "schemaVersion": "1",
+    "active": true,
+    "dataSources": [],
+    "schemaJson": {
+      "formId": "contact_us",
+      "title": "Contact Us",
+      "subTitle": "We usually reply within one business day",
+      "sections": [
         {
-          "icon": "user",
-          "text": "Available only for existing customers."
+          "sectionId": "yourDetails",
+          "title": "YOUR DETAILS",
+          "expandable": false,
+          "sequence": 1,
+          "fields": [
+            {
+              "fieldId": "fullName",
+              "label": "Full Name",
+              "type": "TEXT",
+              "editable": true,
+              "required": true,
+              "enforceMaxLength": true,
+              "placeholder": "Enter your full name",
+              "sanitization": {
+                "type": "NAME",
+                "pattern": "^[\\p{L} ']*$",
+                "message": "Only alphabets, spaces and apostrophe (') are allowed"
+              },
+              "validationRules": [
+                {
+                  "type": "required",
+                  "message": "Please enter your name"
+                },
+                {
+                  "type": "maxLength",
+                  "value": 60,
+                  "message": "Name can't exceed 60 characters"
+                }
+              ],
+              "sequence": 1
+            },
+            {
+              "fieldId": "email",
+              "label": "Email",
+              "type": "EMAIL",
+              "editable": true,
+              "required": true,
+              "placeholder": "you@example.com",
+              "helperText": "We'll send our reply here",
+              "validationRules": [
+                {
+                  "type": "required",
+                  "message": "Email is required"
+                },
+                {
+                  "type": "email",
+                  "message": "Enter a valid email address"
+                }
+              ],
+              "sequence": 2
+            },
+            {
+              "fieldId": "phone",
+              "label": "Phone (optional)",
+              "type": "PHONE",
+              "editable": true,
+              "required": false,
+              "validationRules": [
+                {
+                  "type": "pattern",
+                  "value": "^[0-9+ \\-]{7,15}$",
+                  "message": "Enter a valid phone number"
+                }
+              ],
+              "sequence": 3
+            }
+          ]
         },
         {
-          "icon": "card",
-          "text": "Keep your Debit Card / NetBanking details handy for identity verification."
-        },
-        {
-          "icon": "pan",
-          "text": "Ensure your PAN is updated with the bank and your NRI account is active."
-        },
-        {
-          "icon": "kyc",
-          "text": "Only customers who are Re-KYC and FATCA compliant can proceed."
-        },
-        {
-          "icon": "address",
-          "text": "Both your permanent and mailing address countries should not be India."
+          "sectionId": "message",
+          "title": "YOUR MESSAGE",
+          "expandable": false,
+          "sequence": 2,
+          "fields": [
+            {
+              "fieldId": "topic",
+              "label": "Topic",
+              "type": "DROPDOWN",
+              "editable": true,
+              "required": true,
+              "requiresOtherInput": true,
+              "otherInput": {
+                "triggerValue": "Others",
+                "label": "Please specify your topic",
+                "placeholder": "Tell us what it's about",
+                "required": true,
+                "validationRules": [
+                  {
+                    "type": "maxLength",
+                    "value": 50,
+                    "message": "Keep it under 50 characters"
+                  }
+                ]
+              },
+              "options": [
+                "General enquiry",
+                "Order issue",
+                "Feedback",
+                "Others"
+              ],
+              "optionsLabel": "What is your message about?",
+              "validationRules": [
+                {
+                  "type": "required",
+                  "message": "Please pick a topic"
+                }
+              ],
+              "sequence": 1
+            },
+            {
+              "fieldId": "orderId",
+              "label": "Order ID",
+              "type": "TEXT",
+              "editable": true,
+              "required": true,
+              "placeholder": "e.g. ORD-12345",
+              "helperText": "Found in your order confirmation email",
+              "visibilityRules": [
+                {
+                  "fieldId": "topic",
+                  "operator": "EQUALS",
+                  "value": "Order issue"
+                }
+              ],
+              "validationRules": [
+                {
+                  "type": "required",
+                  "message": "Order ID is required for order issues"
+                }
+              ],
+              "sequence": 2
+            },
+            {
+              "fieldId": "messageBody",
+              "label": "Message",
+              "type": "TEXTAREA",
+              "editable": true,
+              "required": true,
+              "placeholder": "How can we help?",
+              "validationRules": [
+                {
+                  "type": "required",
+                  "message": "Message is required"
+                },
+                {
+                  "type": "minLength",
+                  "value": 20,
+                  "message": "Please give us a bit more detail (at least 20 characters)"
+                },
+                {
+                  "type": "maxLength",
+                  "value": 500,
+                  "message": "Max 500 characters are allowed"
+                }
+              ],
+              "sequence": 3
+            },
+            {
+              "fieldId": "contactConsent",
+              "label": "Consent",
+              "type": "CONSENT",
+              "editable": true,
+              "required": true,
+              "consentText": "I agree to be contacted about this request and accept the privacy policy.",
+              "validationRules": [
+                {
+                  "type": "required",
+                  "message": "Please accept to continue"
+                }
+              ],
+              "sequence": 4
+            }
+          ]
         }
       ]
-    },
-    "consents":[
-     {
-        "key":"GCA_ETB_CONSENT_001",
-        "title":"I agree to be being classified as a \"Retail Client\" as per IFSCA guidelines.",
-        "mandatory":"true",
-        "type":"LOGIN",
-        "headingText":"",
-        "hyperText":"",
-        "description":"<!DOCTYPE html><html lang=\"en\"><body><div>test html content 1</div></body></html>"
-     },
-     {
-        "key":"GCA_ETB_CONSENT_002",
-        "title":"I hereby consent to collection and processing of my Data for availing this Account and relevant services in the manner described in the notice here",
-        "mandatory":"false",
-        "type":"LOGIN",
-        "headingText":"",
-        "hyperText":"here",
-        "description":"<!DOCTYPE html><html lang=\"en\"><body><div>test html content 2</div></body></html>"
-     },
-     {
-        "key":"GCA_ETB_CONSENT_003",
-        "title":"Optional: I hereby consent to processing of my Data for sending me personalized offers on other products and services of HDFC Bank.",
-        "mandatory":"false",
-        "type":"LOGIN",
-        "headingText":"",
-        "hyperText":"here",
-        "description":"<!DOCTYPE html><html lang=\"en\"><body><div>test html content 3</div></body></html>"
-     }
-  ]
-  },
-  "getOtp":{
-    "status": {
-        "code": "0000",
-        "message": "Request succeeded"
-    },
-    "data": {
-        "existingCustomer": "Y",
-        "eligibleCustomer": "Y",
-        "eligibleAccounts" : 1,
-        "txnRef": "KHCwWFQEy3BJfMUJyXpXiJNGfPY8qUTXkQnUXShEWenkC1Pu/Ren3/aW8LEP8oT+K3BsNyihd4v3gq9zSAGb99WJKyMCvgebop/ISIubnugWBkOX09Jh9kMiZgef8ieKRanr7y2RmPJ/1GpoUmMv5k2X/brRaUnngC9dHjbZa8w=",
-        "journeyId": "GCA-WEB-66a21ca2de7d39c5e65d68e0b6a4b6fe",
-        "retryOtpAttemptsConsumed": 0,
-        "retryOtpAttemptsLeft": 2,
-        "verifyOtpAttemptsConsumed": 0,
-        "verifyOtpAttemptsLeft": 3
     }
   }
 }
